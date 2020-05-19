@@ -35,13 +35,13 @@ end
 puts 'Введите стороны треугольника'
 
 puts 'Сторона A:'
-a_side = gets.chomp.to_i
+a_side = gets.chomp.to_f
 
 puts 'Сторона B:'
-b_side = gets.chomp.to_i
+b_side = gets.chomp.to_f
 
 puts 'Сторона C:'
-c_side = gets.chomp.to_i
+c_side = gets.chomp.to_f
 
 if equilateral_triangle?(a_side, b_side, c_side)
   puts 'Треугольник равносторонний и равнобедренный.'

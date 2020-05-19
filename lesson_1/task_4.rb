@@ -2,7 +2,6 @@
 
 # rubocop:disable Style/AsciiComments
 # rubocop:disable Layout/LineLength
-# rubocop:disable Metrics/AbcSize
 
 # Квадратное уравнение.
 # Пользователь вводит 3 коэффициента a, b и с.
@@ -19,8 +18,10 @@ end
 
 def find_roots(discriminant:, co_a:, co_b:)
   if discriminant.positive?
-    [((-co_b + Math.sqrt(discriminant)) / 2 * co_a),
-     ((-co_b - Math.sqrt(discriminant)) / 2 * co_a)]
+    discriminant_sqrt = Math.sqrt(discriminant)
+
+    [((-co_b + discriminant_sqrt) / 2 * co_a),
+     ((-co_b - discriminant_sqrt) / 2 * co_a)]
   elsif discriminant.zero?
     [(-co_b / 2 * co_a)]
   else
@@ -54,4 +55,3 @@ end
 
 # rubocop:enable Style/AsciiComments
 # rubocop:enable Layout/LineLength
-# rubocop:enable Metrics/AbcSize
