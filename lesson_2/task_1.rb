@@ -22,14 +22,7 @@ MONTHS = {
 MONTHS.each { |key, value| puts key if value == 30 }
 
 # Заполнить массив числами от 10 до 100 с шагом 5
-index = 10
-arr = []
-
-while index < 100
-  arr << index
-  index += 5
-end
-
+arr = (0..100).step(5).to_a
 puts arr.inspect
 
 # Заполнить массив числами фибоначчи до 100
@@ -40,25 +33,14 @@ puts arr.inspect
 #   num < 3 ? 1 : fib_num(num - 1) + fib_num(num - 2)
 # end
 
-# Более оптимальный вариант с циклом
-def fib_num(num)
-  el_one = 1
-  el_two = 1
-  index = 0
-
-  while index < num - 2
-    sum = el_one + el_two
-    el_one = el_two
-    el_two = sum
-    index += 1
-  end
-
-  el_two
+# Более оптимальный вариант, сохраняет предыдущий результат
+fib = Hash.new do |h, key|
+  h[key] = key < 2 ? key : h[key - 1] + h[key - 2]
 end
 
 # Тут, конечно, можно использовать итератор map вместо each.
 # Но такой способ мне кажется более наглядным
-arr = (1..100).each_with_object([]) { |i, a| a << fib_num(i) }
+arr = (1..100).each_with_object([]) { |i, a| a << fib[i] }
 puts arr.inspect
 
 # Заполнить хеш гласными буквами, где значением будет

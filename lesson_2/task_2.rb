@@ -21,16 +21,16 @@ puts 'Введите день:'
 day = gets.chomp.to_i
 
 puts 'Введите месяц:'
-mouth = gets.chomp.to_i
+month = gets.chomp.to_i
 
 puts 'Введите год:'
 year = gets.chomp.to_i
 
 # Получаем кол-во дней за месяцы до указанного + указанный день
-days_count = MONTHS_DAY_COUNTS[0..mouth - 2].sum + day
+days_count = MONTHS_DAY_COUNTS[0..month - 2].sum + day
 
 # Добавляем день, если год - високосный
-days_count += 1 if mouth > 2 && year_leap?(year)
+days_count += 1 if month > 2 && year_leap?(year)
 
 # Выводим на экран результат расчетов
 puts "Порядковый номер даты: #{days_count}"
