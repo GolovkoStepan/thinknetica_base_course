@@ -1,10 +1,10 @@
-## Railway simulator version 0.0.1
+## Railway simulator version 0.0.2
 
 Для запуска необходимо:
 
-Перейти в каталог lesson_4:
+Перейти в каталог lesson_5:
 ```shell script
-cd lesson_4
+cd lesson_5
 ```
 Выполнить команду:
 ``` 
