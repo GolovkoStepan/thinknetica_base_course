@@ -14,10 +14,6 @@ class Route
   attr_reader   :way_stations
 
   def initialize(name:, start_station:, end_station:)
-    unless start_station.is_a?(Station) && end_station.is_a?(Station)
-      raise ArgumentError
-    end
-
     # Имеет начальную и конечную станцию, а также список промежуточных станций.
     # Начальная и конечная станции указываютсся при создании маршрута
     @start_station = start_station
@@ -57,6 +53,14 @@ class Route
   protected
 
   def validate!
+    unless @start_station.is_a? Station
+      raise ArgumentError 'Start station have wrong type'
+    end
+
+    unless @end_station.is_a? Station
+      raise ArgumentError 'End station have wrong type'
+    end
+
     raise ArgumentError 'Name must be filled' if @name.nil? || @name.empty?
   end
 end
