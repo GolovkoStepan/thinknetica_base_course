@@ -8,5 +8,5 @@
 6) [Исключения](./lesson_6)
 7) [Блоки, Proc и Lambda](./lesson_7)
 8) [Идиомы Ruby и хороший стиль](https://github.com/GolovkoStepan/railway_simulator)
-9) [Основы Ruby. Часть 1](./lesson_1)
+9) [Метапрограммирование](https://github.com/GolovkoStepan/railway_simulator)
 10) [Основы Ruby. Часть 1](./lesson_1)
